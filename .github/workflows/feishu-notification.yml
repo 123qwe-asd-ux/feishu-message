@@ -40,7 +40,7 @@ jobs:
                         "is_short": false,
                         "text": {
                           "tag": "lark_md",
-                          "content": ":sparkles: **${PR_TITLE}**"
+                          "content": "✨ **${PR_TITLE}**"
                         }
                       },
                       {
