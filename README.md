@@ -1,2 +1,2 @@
 # feishu-message
-feishu-message
+send feishu-message
