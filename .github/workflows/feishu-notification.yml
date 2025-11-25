@@ -56,7 +56,7 @@ jobs:
                     "tag": "div",
                     "text": {
                       "tag": "plain_text",
-                      "content": "由 ${PR_AUTHOR} 发起 · 分支：${BASE_REF} -> ${HEAD_REF}"
+                      "content": "由 **${PR_AUTHOR}** 发起 · 分支：**${BASE_REF} -> ${HEAD_REF}**"
                     }
                   },
                   {
@@ -66,14 +66,14 @@ jobs:
                         "is_short": true,
                         "text": {
                           "tag": "plain_text",
-                          "content": "状态：🔔 ${PR_STATE}"
+                          "content": "状态：🔔 **${PR_STATE}**"
                         }
                       },
                       {
                         "is_short": true,
                         "text": {
                           "tag": "plain_text",
-                          "content": "作者：${PR_AUTHOR}"
+                          "content": "作者：**${PR_AUTHOR}**"
                         }
                       }
                     ]
@@ -82,7 +82,7 @@ jobs:
                     "tag": "div",
                     "text": {
                       "tag": "lark_md",
-                      "content": "当前动作：\`${PR_STATE}\`，请点击下方按钮查看详细信息。"
+                      "content": "当前动作：**${PR_STATE}**，请点击下方按钮查看详细信息。"
                     }
                   },
                   {
