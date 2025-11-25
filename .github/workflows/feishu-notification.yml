@@ -10,6 +10,9 @@ jobs:
     steps:
       - name: Send to Feishu
         run: |
-         curl -X POST -H "Content-Type: application/json" \
-            -d '{"msg_type":"text","content":{"text":"🔔 PR通知: ${{ github.event.action }} - ${{ github.event.pull_request.title }}\n👤 作者: ${{ github.event.pull_request.user.login }}\n链接: ${{ github.event.pull_request.html_url }}"}}' \
+          PR_TITLE="${{ github.event.pull_request.title }}"
+          PR_AUTHOR="${{ github.event.pull_request.user.login }}"
+          PR_URL="${{ github.event.pull_request.html_url }}"
+          curl -X POST -H "Content-Type: application/json" \
+            -d '{"msg_type":"interactive","card":{"config":{"wide_screen_mode":true},"header":{"title":{"tag":"plain_text","content":"PR 通知"}},"elements":[{"tag":"div","text":{"tag":"lark_md","content":"**'"$PR_TITLE"'**\n作者：`'"$PR_AUTHOR"'`"}},{"tag":"action","actions":[{"tag":"button","text":{"tag":"plain_text","content":"查看 PR"},"type":"primary","url":"'"$PR_URL"'"}]}]}}' \
             https://open.feishu.cn/open-apis/bot/v2/hook/d87503b9-801a-47a1-bc6d-0a6bc897a601
